@@ -1,1 +1,126 @@
+/*Estilos para movil*/
 
+body{
+    background-color: lightpink;
+}
+
+header nav ul{/*la lista del encabezado*/
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+    background-color: white;
+}
+
+header nav ul li { 
+    list-style: none;
+    background-color: #7df4fa;
+    padding: 5px;
+    margin: 5px;
+}
+
+main{
+    display: block;
+    text-align: center;
+    background-color: white;
+}
+
+h1{
+    font-size: 30px;
+    background-color: #7df4fa;
+    margin: 5%;
+    border-radius: 12px;
+}
+
+.tarjeta{
+    background-color: #7df4fa;
+    margin: 5%;
+    border-radius: 12px;
+}
+
+.tarjeta img{
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+/*Estilos para tablet*/
+
+@media screen and (min-width: 768px){
+    /*La barra de navegacion no quedó como quería pero hice lo que pude, ya que "Contacto" y "sobre notrosos"
+      aparecen dentro de explorar, por  lo que es como si fueran submenú, en lugar de que inicio, explorar,
+      Contacto y Sobre nosotros tengan el mismo rango*/
+    header nav ul {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: lightpink;
+    }
+
+    header nav ul li {
+        background-color: white;
+        font-size: 35px;
+        padding: 10px;
+    }
+
+    header nav ul li ul{
+        display: inline-block;
+    }
+
+    header nav ul li ul li{
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .ocultar {
+        display: none;
+    }
+
+    /* Con ayuda de chat gpt en las siguientes 3 partes Prompt utilizado
+    como hago en CSS para que el div tarjeta abajo, salga abajo de los otros dos,
+    ya que al hacer display: flex, flex direction: row, los tres se ponen en fila.
+    y quiero que el ultimo salga abajo para que quepan en la pantalla*/
+
+    .tarjetas-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tarjeta {
+        flex: 1 1 calc(50% - 20px);
+        margin: 5px;
+    }
+
+    .abajo {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+/*Estilos para Escritorio*/
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        height: 400px;
+    }
+
+    .tarjetas-container {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .tarjeta {
+        flex: initial;
+        width: 33%;
+        margin: 5px;
+    }
+
+    .tarjeta img{
+        width: 90%;
+    }
+}
